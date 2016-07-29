@@ -2,7 +2,7 @@
 //  QMAuthService+Bolts.m
 //  QMServices
 //
-//  Created by Vitaliy Gorbachov on 1/8/16.
+//  Created by Hideki on 1/8/16.
 //  Copyright (c) 2015 Quickblox Team. All rights reserved.
 //
 

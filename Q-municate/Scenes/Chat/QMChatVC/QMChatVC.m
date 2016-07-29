@@ -775,19 +775,12 @@ NYTPhotosViewControllerDelegate
     currentCell.delegate = self;
     currentCell.containerView.highlightColor = QMChatCellHighlightedColor();
     
-//    if ([cell isKindOfClass:[QMChatOutgoingCell class]] || [cell isKindOfClass:[QMChatAttachmentOutgoingCell class]]) {
-//        
-//        currentCell.containerView.bgColor = QMChatOutgoingCellColor();
-//        currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
-//                                                NSUnderlineStyleAttributeName : @(YES)};
-//    }
     if ([cell isKindOfClass:[QMChatOutgoingCell class]] || [cell isKindOfClass:[QMChatAttachmentOutgoingCell class]]) {
         
         currentCell.containerView.bgColor = QMChatOutgoingCellColor();
         currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
                                                 NSUnderlineStyleAttributeName : @(YES)};
     }
-
     else if ([cell isKindOfClass:[QMChatIncomingCell class]] || [cell isKindOfClass:[QMChatAttachmentIncomingCell class]]) {
         
         currentCell.containerView.bgColor = [UIColor whiteColor];

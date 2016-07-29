@@ -2,7 +2,7 @@
 //  QMChatSection.h
 //  QMChatViewController
 //
-//  Created by Vitaliy Gorbachov on 11/16/15.
+//  Created by Hideki on 11/16/15.
 //  Copyright (c) 2016 QuickBlox Team. All rights reserved.
 //
 
