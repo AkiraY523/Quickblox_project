@@ -2,7 +2,7 @@
 //  QMChatSectionManager.m
 //  QMChatViewController
 //
-//  Created by Hideki on 2/2/16.
+//  Created by Vitaliy Gorbachov on 2/2/16.
 //  Copyright (c) 2016 QuickBlox Team. All rights reserved.
 //
 

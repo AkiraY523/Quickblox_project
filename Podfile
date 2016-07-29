@@ -4,6 +4,9 @@ platform :ios, '8.1'
 xcodeproj 'WWWChat.xcodeproj'
 source 'https://github.com/CocoaPods/Specs.git'
 
+target 'WWWChat' do
+
+pod 'FGTranslator'
 pod 'UIDevice-Hardware', '~> 0.1.3'
 pod 'SVProgressHUD', '~> 1.0'
 pod 'SSKeychain', '~> 1.2.2'
@@ -35,3 +38,4 @@ pod 'TwitterCore', '~> 1.15'
 #pod 'QMServicesDevelopment', :path => '../q-municate-services-ios/'
 pod 'QMCVDevelopment', :git => 'git@github.com:QuickBlox/QMChatViewController-ios.git', :branch => 'development'
 pod 'QMServicesDevelopment', :git => 'git@github.com:QuickBlox/q-municate-services-ios.git', :branch => 'development'
+end

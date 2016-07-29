@@ -2,7 +2,7 @@
 //  QMHeaderCollectionReusableView.m
 //  Pods
 //
-//  Created by Hideki on 11/16/15.
+//  Created by Vitaliy Gorbachov on 11/16/15.
 //
 //
 

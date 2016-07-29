@@ -2,7 +2,7 @@
 //  QMContactListService+Bolts.m
 //  QMServices
 //
-//  Created by Hideki on 12/29/15.
+//  Created by Vitaliy Gorbachov on 12/29/15.
 //  Copyright (c) 2015 Quickblox Team. All rights reserved.
 //
 
