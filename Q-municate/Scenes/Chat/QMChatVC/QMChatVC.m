@@ -20,7 +20,7 @@
 #import "QMAlert.h"
 #import "QMNotification.h"
 #import "QMProfile.h"
-
+#import "FGTranslator.h"
 // helpers
 #import "QMChatButtonsFactory.h"
 #import "UIImage+fixOrientation.h"
@@ -269,6 +269,37 @@ NYTPhotosViewControllerDelegate
     [self.chatDialog clearTypingStatusBlocks];
     [self.chatDialog clearDialogOccupantsStatusBlock];
 }
+
+#pragma mark - Translator
+
+- (FGTranslator *)translator {
+    /*
+     * using Bing Translate
+     *
+     * Note: The client id and secret here is very limited and is included for demo purposes only.
+     * You must use your own credentials for production apps.
+     */
+    FGTranslator *translator = [[FGTranslator alloc] initWithBingAzureClientId:@"fgtranslator-demo" secret:@"GrsgBiUCKACMB+j2TVOJtRboyRT8Q9WQHBKJuMKIxsU="];
+    
+    // or use Google Translate
+    
+    // using Google Translate
+    // translator = [[FGTranslator alloc] initWithGoogleAPIKey:@"your_google_key"];
+    
+    return translator;
+}
+
+- (NSLocale *)currentLocale {
+    NSLocale *locale = [NSLocale currentLocale];
+    #if TARGET_IPHONE_SIMULATOR
+    // handling Apple bug
+    // http://stackoverflow.com/a/26769277/211692
+        return [NSLocale localeWithLocaleIdentifier:[locale localeIdentifier]];
+    #else
+        return locale;
+    #endif
+}
+
 
 #pragma mark - Helpers & Utility
 
@@ -1112,7 +1143,23 @@ NYTPhotosViewControllerDelegate
                 [self.chatSectionManager updateMessage:lastMessage];
             }
         }
-        
+    [self.translator translateText:message.text
+                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
+        if (error){
+                 //[self showErrorWithError:error]
+                 // [SVProgressHUD dismiss];
+        }
+        else {
+            
+            NSString *fromLanguage = [[self currentLocale] displayNameForKey:NSLocaleIdentifier value:sourceLanguage];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:fromLanguage ? [NSString stringWithFormat:@"from %@", fromLanguage] : nil
+                                                                 message:translated
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+                 [alert show];
+             }
+        }];
         // Inserting message received from XMPP or sent by self
         [self.chatSectionManager addMessage:message];
     }
