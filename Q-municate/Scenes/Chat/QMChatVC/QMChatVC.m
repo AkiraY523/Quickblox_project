@@ -1172,6 +1172,24 @@ NYTPhotosViewControllerDelegate
         [self.chatSectionManager addMessages:messages];
         
     }
+//    else {
+//        
+//        [self.translator translateText:message.text
+//                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
+//                                if (error){
+//                                }
+//                                else {
+//                                    NSLog(@"sourceLanguage=%@",sourceLanguage);
+//                                    //                                  message.text = translated;
+//                                    message.text = [NSString stringWithFormat:@"%@%@",message.text,translated];
+//                                    NSLog(@"translatorResult=%@",message.text);
+//                                    [self.chatSectionManager updateMessage:message];
+//                                }
+//                            }];
+//
+//        [self.chatSectionManager addMessages:messages];
+//    }
+    
 }
 
 - (void)chatService:(QMChatService *)__unused chatService didAddMessageToMemoryStorage:(QBChatMessage *)message forDialogID:(NSString *)dialogID {
@@ -1234,19 +1252,6 @@ NYTPhotosViewControllerDelegate
     if ([self.chatDialog.ID isEqualToString:dialogID] && message.senderID == self.senderID) {
         
         // self-sending attachments
-//        [self.translator translateText:message.text
-//                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
-//                                if (error){
-//                                }
-//                                else {
-//                                    NSLog(@"sourceLanguage=%@",sourceLanguage);
-////                                  message.text = translated;
-//                                    message.text = [NSString stringWithFormat:@"%@%@",message.text,translated];
-//                                    NSLog(@"translatorResult=%@",message.text);
-//                                    [self.chatSectionManager updateMessage:message];
-//                                }
-//        }];
-        
         [self.chatSectionManager updateMessage:message];
         
     }
@@ -1259,7 +1264,7 @@ NYTPhotosViewControllerDelegate
                                 else {
                                     NSLog(@"sourceLanguage=%@",sourceLanguage);
                                     //                                  message.text = translated;
-                                    message.text = [NSString stringWithFormat:@"%@%@",message.text,translated];
+                                    message.text = [NSString stringWithFormat:@"%@\n%@",message.text,translated];
                                     NSLog(@"translatorResult=%@",message.text);
                                     [self.chatSectionManager updateMessage:message];
                                 }

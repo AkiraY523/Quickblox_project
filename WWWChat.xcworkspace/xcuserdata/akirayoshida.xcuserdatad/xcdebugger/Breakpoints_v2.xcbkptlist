@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
-            timestampString = "493180563.859944"
+            timestampString = "493182134.694235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1267"
-            endingLineNumber = "1267"
+            startingLineNumber = "1255"
+            endingLineNumber = "1255"
             landmarkName = "-chatService:didUpdateMessage:forDialogID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
-            timestampString = "493009629.225114"
+            timestampString = "493182134.694235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1177"
-            endingLineNumber = "1177"
+            startingLineNumber = "1195"
+            endingLineNumber = "1195"
             landmarkName = "-chatService:didAddMessageToMemoryStorage:forDialogID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
-            timestampString = "493180563.859944"
+            timestampString = "493182134.694235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1193"
-            endingLineNumber = "1193"
+            startingLineNumber = "1211"
+            endingLineNumber = "1211"
             landmarkName = "-chatService:didAddMessageToMemoryStorage:forDialogID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
-            timestampString = "493066050.101675"
+            timestampString = "493182134.694235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1181"
-            endingLineNumber = "1181"
+            startingLineNumber = "1199"
+            endingLineNumber = "1199"
             landmarkName = "-chatService:didAddMessageToMemoryStorage:forDialogID:"
             landmarkType = "5">
          </BreakpointContent>
