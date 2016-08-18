@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YH4-rQ-UBO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YH4-rQ-UBO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -50,7 +50,7 @@
                                         <color key="textColor" red="0.0" green="0.74901960784313726" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-iPad-Pro.png" translatesAutoresizingMaskIntoConstraints="NO" id="wjC-np-AQ5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Icon-App-iPad-Pro.png" translatesAutoresizingMaskIntoConstraints="NO" id="wjC-np-AQ5">
                                         <rect key="frame" x="77" y="30" width="167" height="131"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-4T-p7b">
@@ -632,11 +632,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-App-iPad-Pro.png" width="167" height="167"/>
+        <image name="Icon-App-iPad-Pro.png" width="650" height="523"/>
         <image name="underline" width="1" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DqO-we-8ze"/>
         <segue reference="7KE-cg-4Nx"/>
+        <segue reference="gvf-Mq-aij"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -123,6 +123,8 @@ NYTPhotosViewControllerDelegate
 
 @dynamic storedMessages;
 
+@synthesize chatSectionManager;
+
 #pragma mark - Static methods
 
 + (instancetype)chatViewControllerWithChatDialog:(QBChatDialog *)chatDialog {
@@ -812,16 +814,18 @@ NYTPhotosViewControllerDelegate
         currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
                                                 NSUnderlineStyleAttributeName : @(YES)};
     }
+    
     else if ([cell isKindOfClass:[QMChatIncomingCell class]] || [cell isKindOfClass:[QMChatAttachmentIncomingCell class]]) {
         
         currentCell.containerView.bgColor = [UIColor whiteColor];
         currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : QMChatIncomingLinkColor(),
                                                 NSUnderlineStyleAttributeName : @(YES)};
-        
         /**
          *  Setting opponent avatar
          */
+        
         QBChatMessage* message = [self.chatSectionManager messageForIndexPath:indexPath];
+
         QBUUser *sender = [[QMCore instance].usersService.usersMemoryStorage userWithID:message.senderID];
         
         QMImageView *avatarView = [(QMChatCell *)cell avatarView];
@@ -837,6 +841,46 @@ NYTPhotosViewControllerDelegate
         avatarView.imageViewType = QMImageViewTypeCircle;
         
     }
+
+//    else if ([cell isKindOfClass:[QMChatIncomingCell class]] || [cell isKindOfClass:[QMChatAttachmentIncomingCell class]]) {
+//        
+//        currentCell.containerView.bgColor = [UIColor whiteColor];
+//        currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : QMChatIncomingLinkColor(),
+//                                                NSUnderlineStyleAttributeName : @(YES)};
+//        
+//        /**
+//         *  Setting opponent avatar
+//         */
+//        QBChatMessage* message = [self.chatSectionManager messageForIndexPath:indexPath];
+//        
+//        [self.translator translateText:message.text
+//                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
+//                                if (error){
+//                                }
+//                                else {
+//                                    NSLog(@"sourceLanguage=%@",sourceLanguage);
+////                                    message.text = translated;
+//                                    message.text = [NSString stringWithFormat:@"%@/n%@",message.text,translated];
+//                                    NSLog(@"message=%@",message.text);
+//                                    QBUUser *sender = [[QMCore instance].usersService.usersMemoryStorage userWithID:message.senderID];
+//                                    
+//                                    QMImageView *avatarView = [(QMChatCell *)cell avatarView];
+//                                    
+//                                    NSURL *userImageUrl = [NSURL URLWithString:sender.avatarUrl];
+//                                    UIImage *placeholder = [QMPlaceholder placeholderWithFrame:avatarView.bounds title:sender.fullName ID:sender.ID];
+//                                    
+//                                    [avatarView setImageWithURL:userImageUrl
+//                                                    placeholder:placeholder
+//                                                        options:SDWebImageHighPriority
+//                                                       progress:nil
+//                                                 completedBlock:nil];
+//                                    avatarView.imageViewType = QMImageViewTypeCircle;
+//                                    
+////                                    [self.collectionView reloadData];
+//                                }
+//                            }];
+//        
+//    }
     else if ([cell isKindOfClass:[QMChatNotificationCell class]]) {
         
         currentCell.containerView.bgColor = QMChatNotificationCellColor();
@@ -1126,6 +1170,7 @@ NYTPhotosViewControllerDelegate
     if ([self.chatDialog.ID isEqualToString:dialogID]) {
         
         [self.chatSectionManager addMessages:messages];
+        
     }
 }
 
@@ -1139,29 +1184,20 @@ NYTPhotosViewControllerDelegate
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
             QBChatMessage *lastMessage = [self.chatSectionManager messageForIndexPath:indexPath];
             if (lastMessage.messageType == QMMessageTypeContactRequest) {
-                
                 [self.chatSectionManager updateMessage:lastMessage];
             }
         }
-    [self.translator translateText:message.text
-                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
-        if (error){
-                 //[self showErrorWithError:error]
-                 // [SVProgressHUD dismiss];
+        
+        // Inserting message send from XMPP or sent by self
+
+        else if(message.senderID == self.senderID){
+            [self.chatSectionManager addMessage:message];
         }
-        else {
-            
-            NSString *fromLanguage = [[self currentLocale] displayNameForKey:NSLocaleIdentifier value:sourceLanguage];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:fromLanguage ? [NSString stringWithFormat:@"from %@", fromLanguage] : nil
-                                                                 message:translated
-                                                                delegate:nil
-                                                       cancelButtonTitle:@"OK"
-                                                       otherButtonTitles:nil];
-                 [alert show];
-             }
-        }];
+        
         // Inserting message received from XMPP or sent by self
-        [self.chatSectionManager addMessage:message];
+        else{
+            [self.chatSectionManager addMessage:message];
+        }
     }
 }
 
@@ -1184,14 +1220,53 @@ NYTPhotosViewControllerDelegate
     }
 }
 
+- (void)chatService:(QMChatService *)__unused chatService  didReceiveNotificationMessage:(QBChatMessage *)message createDialog:(QBChatDialog *)dialog {
+    
+    [QMChatCache.instance insertOrUpdateMessage:message withDialogId:dialog.ID completion:nil];
+    [QMChatCache.instance insertOrUpdateDialog:dialog completion:nil];
+    
+    NSLog(@"message notification =%@",message.text);
+}
+
+
 - (void)chatService:(QMChatService *)__unused chatService didUpdateMessage:(QBChatMessage *)message forDialogID:(NSString *)dialogID
 {
     if ([self.chatDialog.ID isEqualToString:dialogID] && message.senderID == self.senderID) {
+        
         // self-sending attachments
+//        [self.translator translateText:message.text
+//                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
+//                                if (error){
+//                                }
+//                                else {
+//                                    NSLog(@"sourceLanguage=%@",sourceLanguage);
+////                                  message.text = translated;
+//                                    message.text = [NSString stringWithFormat:@"%@%@",message.text,translated];
+//                                    NSLog(@"translatorResult=%@",message.text);
+//                                    [self.chatSectionManager updateMessage:message];
+//                                }
+//        }];
+        
         [self.chatSectionManager updateMessage:message];
+        
+    }
+    else{
+        
+        [self.translator translateText:message.text
+                            completion:^(NSError *error, NSString *translated, NSString *sourceLanguage){
+                                if (error){
+                                }
+                                else {
+                                    NSLog(@"sourceLanguage=%@",sourceLanguage);
+                                    //                                  message.text = translated;
+                                    message.text = [NSString stringWithFormat:@"%@%@",message.text,translated];
+                                    NSLog(@"translatorResult=%@",message.text);
+                                    [self.chatSectionManager updateMessage:message];
+                                }
+        }];
+
     }
 }
-
 #pragma mark - QMChatConnectionDelegate
 
 - (void)chatServiceChatDidConnect:(QMChatService *)__unused chatService {
