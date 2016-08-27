@@ -1253,7 +1253,6 @@ NYTPhotosViewControllerDelegate
         
         // self-sending attachments
         [self.chatSectionManager updateMessage:message];
-        
     }
     else{
         
