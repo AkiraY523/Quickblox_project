@@ -165,6 +165,8 @@
 		69DB5EF518E31D6400277226 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DB5EF418E31D6400277226 /* MessageUI.framework */; };
 		86FD874D1982512000B6FA43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD874C1982512000B6FA43 /* GLKit.framework */; };
 		C00E6ACE1D2B69C7003A7B73 /* QMSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00E6ACD1D2B69C7003A7B73 /* QMSignupViewController.m */; };
+		C011C8521D87FE82009E56AB /* in.png in Resources */ = {isa = PBXBuildFile; fileRef = C011C8501D87FE82009E56AB /* in.png */; };
+		C011C8531D87FE82009E56AB /* out.png in Resources */ = {isa = PBXBuildFile; fileRef = C011C8511D87FE82009E56AB /* out.png */; };
 		C0C4213A1D261EA0007FB0B7 /* chat1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C421371D261EA0007FB0B7 /* chat1.png */; };
 		C0C4213B1D261EA0007FB0B7 /* chat2.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C421381D261EA0007FB0B7 /* chat2.png */; };
 		C0C4213C1D261EA0007FB0B7 /* chat3.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C421391D261EA0007FB0B7 /* chat3.png */; };
@@ -451,11 +453,14 @@
 		86FD874C1982512000B6FA43 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		C00E6ACC1D2B69C7003A7B73 /* QMSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QMSignupViewController.h; path = "Q-municate/Classes/ViewControllers/AuthViewControllers/SignupVC/QMSignupViewController.h"; sourceTree = SOURCE_ROOT; };
 		C00E6ACD1D2B69C7003A7B73 /* QMSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QMSignupViewController.m; path = "Q-municate/Classes/ViewControllers/AuthViewControllers/SignupVC/QMSignupViewController.m"; sourceTree = SOURCE_ROOT; };
+		C011C8501D87FE82009E56AB /* in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = in.png; path = image/in.png; sourceTree = "<group>"; };
+		C011C8511D87FE82009E56AB /* out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = out.png; path = image/out.png; sourceTree = "<group>"; };
 		C01363BC1D2502E200CC6809 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = ../../../Desktop/ios; sourceTree = "<group>"; };
 		C067A6A11D362F9C00B6C302 /* WWWChat.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = WWWChat.ipa; sourceTree = "<group>"; };
 		C0C421371D261EA0007FB0B7 /* chat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat1.png; sourceTree = "<group>"; };
 		C0C421381D261EA0007FB0B7 /* chat2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat2.png; sourceTree = "<group>"; };
 		C0C421391D261EA0007FB0B7 /* chat3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat3.png; sourceTree = "<group>"; };
+		C0CF05FF1D8C0ED7001F1AB8 /* WWWChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WWWChat.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1785,6 +1790,7 @@
 		69D57E4918ACC11C00A9900A = {
 			isa = PBXGroup;
 			children = (
+				C0CF05FF1D8C0ED7001F1AB8 /* WWWChat.entitlements */,
 				55286995199131B5006F92CB /* Localizable.strings */,
 				69D57E5B18ACC11C00A9900A /* Q-municate */,
 				559327A0199216FB001C4BF8 /* Q-municate Tests */,
@@ -1888,6 +1894,8 @@
 		C0C421361D2612EB007FB0B7 /* screen */ = {
 			isa = PBXGroup;
 			children = (
+				C011C8501D87FE82009E56AB /* in.png */,
+				C011C8511D87FE82009E56AB /* out.png */,
 				C0C421371D261EA0007FB0B7 /* chat1.png */,
 				C0C421381D261EA0007FB0B7 /* chat2.png */,
 				C0C421391D261EA0007FB0B7 /* chat3.png */,
@@ -1931,6 +1939,7 @@
 				TargetAttributes = {
 					69D57E5118ACC11C00A9900A = {
 						DevelopmentTeam = B6XQKNBQY5;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1965,8 +1974,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C011C8521D87FE82009E56AB /* in.png in Resources */,
 				5868B06D1CE9C6ED004F9233 /* QMCallInfoView.xib in Resources */,
 				5868B07A1CE9E61E004F9233 /* QMNoContactsCell.xib in Resources */,
+				C011C8531D87FE82009E56AB /* out.png in Resources */,
 				55A8B06F1965986A00B5D33B /* busy.wav in Resources */,
 				584277C71C3D46D000CDE35B /* Settings.storyboard in Resources */,
 				584277BB1C3D404A00CDE35B /* Start.storyboard in Resources */,
@@ -2271,9 +2282,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_ENTITLEMENTS = WWWChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ingrid Mjos (CR4TLUWXFS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ingrid Mjos (CR4TLUWXFS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				DEVELOPMENT_TEAM = B6XQKNBQY5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2301,7 +2314,8 @@
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WWWChat.Ingrid;
 				PRODUCT_NAME = WWWChat;
-				PROVISIONING_PROFILE = "33cc8408-f807-40a5-a414-962eea50771b";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REZ_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2330,9 +2344,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_ENTITLEMENTS = WWWChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ingrid Mjos (CR4TLUWXFS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ingrid Mjos (CR4TLUWXFS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				DEVELOPMENT_TEAM = B6XQKNBQY5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2365,7 +2381,8 @@
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WWWChat.Ingrid;
 				PRODUCT_NAME = WWWChat;
-				PROVISIONING_PROFILE = "33cc8408-f807-40a5-a414-962eea50771b";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REZ_SEARCH_PATHS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;

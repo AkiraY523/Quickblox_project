@@ -40,8 +40,9 @@ static const NSInteger kQMEmojiButtonTag = 100;
 static const CGFloat kQMEmojiButtonSize = 45.0f;
 static const CGFloat kQMInputToolbarTextContainerInsetRight = 25.0f;
 static const CGFloat kQMAttachmentCellSize = 200.0f;
-static const CGFloat kQMWidthPadding = 40.0f;
-static const CGFloat kQMAvatarSize = 28.0f;
+static const CGFloat kQMWidthPadding = 20.0f;
+static const CGFloat kQMAvatarHeihgtSize = 28.0f;
+static const CGFloat kQMAvatarWidthSize = 5.0f;
 static const CGFloat kQMGroupAvatarSize = 30.0f;
 
 @interface QMChatVC ()
@@ -604,8 +605,10 @@ NYTPhotosViewControllerDelegate
     else {
         
         message = messageItem.text;
-        textColor = messageItem.senderID == self.senderID ? [UIColor whiteColor] : [UIColor blackColor];
-        font = [UIFont systemFontOfSize:16.0f];
+        textColor = messageItem.senderID == self.senderID ? [UIColor blackColor] : [UIColor blackColor];
+//        font = [UIFont systemFontOfSize:16.0f];
+        font= [UIFont fontWithName:@"Avenir" size:24];
+        
     }
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -625,10 +628,11 @@ NYTPhotosViewControllerDelegate
         return nil;
     }
     
-    UIFont *font = [UIFont systemFontOfSize:15.0f];
+    UIFont *font = [UIFont systemFontOfSize:1.0f];
     
     QBUUser *opponentUser = [[QMCore instance].usersService.usersMemoryStorage userWithID:messageItem.senderID];
     NSString *topLabelText = [NSString stringWithFormat:@"%@", opponentUser.fullName ?: @(messageItem.senderID)];
+    
     
     // setting the paragraph style lineBreakMode to NSLineBreakByTruncatingTail
     // in order to let TTTAttributedLabel cut the line in a correct way
@@ -639,6 +643,7 @@ NYTPhotosViewControllerDelegate
                                   NSParagraphStyleAttributeName: paragraphStyle};
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:topLabelText attributes:attributes];
+    NSLog(@"%@",attributedString);
     
     return attributedString;
 }
@@ -765,7 +770,20 @@ NYTPhotosViewControllerDelegate
     if (class == [QMChatOutgoingCell class] ||
         class == [QMChatAttachmentOutgoingCell class]) {
         
-        layoutModel.avatarSize = CGSizeZero;
+        if (self.chatDialog.type != QBChatDialogTypePrivate) {
+            
+            NSAttributedString *topLabelString = [self topLabelAttributedStringForItem:item];
+            CGSize size = [TTTAttributedLabel sizeThatFitsAttributedString:topLabelString
+                                                           withConstraints:CGSizeMake(CGRectGetWidth(self.collectionView.frame) - kQMWidthPadding, CGFLOAT_MAX)
+                                                    limitedToNumberOfLines:1];
+            layoutModel.topLabelHeight = size.height;
+        }
+        
+        layoutModel.spaceBetweenTopLabelAndTextView = 5.0f;
+        layoutModel.avatarSize = CGSizeMake(kQMAvatarHeihgtSize, kQMAvatarWidthSize);
+
+        
+//        layoutModel.avatarSize = CGSizeZero;
     }
     else if (class == [QMChatAttachmentIncomingCell class] ||
              class == [QMChatIncomingCell class]) {
@@ -780,7 +798,7 @@ NYTPhotosViewControllerDelegate
         }
         
         layoutModel.spaceBetweenTopLabelAndTextView = 5.0f;
-        layoutModel.avatarSize = CGSizeMake(kQMAvatarSize, kQMAvatarSize);
+        layoutModel.avatarSize = CGSizeMake(kQMAvatarHeihgtSize, kQMAvatarWidthSize);
         
     } else if (class == [QMChatNotificationCell class]) {
         
@@ -788,6 +806,7 @@ NYTPhotosViewControllerDelegate
     }
     
     CGSize size = CGSizeZero;
+    
     if ([self.detailedCells containsObject:item.ID] || class == [QMChatAttachmentIncomingCell class] || class == [QMChatAttachmentOutgoingCell class]) {
         
         size = [TTTAttributedLabel sizeThatFitsAttributedString:[self bottomLabelAttributedStringForItem:item]
@@ -813,6 +832,27 @@ NYTPhotosViewControllerDelegate
         currentCell.containerView.bgColor = QMChatOutgoingCellColor();
         currentCell.textView.linkAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
                                                 NSUnderlineStyleAttributeName : @(YES)};
+        
+        QBChatMessage* message = [self.chatSectionManager messageForIndexPath:indexPath];
+        
+        QBUUser *sender = [[QMCore instance].usersService.usersMemoryStorage userWithID:message.senderID];
+        NSLog(@"%@",sender);
+        QMImageView *avatarView = [(QMChatCell *)cell avatarView];
+        
+//        NSURL *userImageUrl = [NSURL URLWithString:sender.avatarUrl];
+//        UIImage *placeholder = [QMPlaceholder placeholderWithFrame:avatarView.bounds title:sender.fullName ID:sender.ID];
+        UIImage *OutGoingImage = [UIImage imageNamed:@"out.png"];
+
+        
+        [avatarView setImageWithURL:nil
+                        placeholder:OutGoingImage
+                            options:SDWebImageHighPriority
+                           progress:nil
+                     completedBlock:nil];
+//        avatarView.imageViewType = QMImageViewTypeCircle;
+
+        
+        
     }
     
     else if ([cell isKindOfClass:[QMChatIncomingCell class]] || [cell isKindOfClass:[QMChatAttachmentIncomingCell class]]) {
@@ -827,18 +867,20 @@ NYTPhotosViewControllerDelegate
         QBChatMessage* message = [self.chatSectionManager messageForIndexPath:indexPath];
 
         QBUUser *sender = [[QMCore instance].usersService.usersMemoryStorage userWithID:message.senderID];
+        NSLog(@"%@",sender);
         
         QMImageView *avatarView = [(QMChatCell *)cell avatarView];
+        avatarView.image= [UIImage imageNamed:@"in.png"];
         
-        NSURL *userImageUrl = [NSURL URLWithString:sender.avatarUrl];
-        UIImage *placeholder = [QMPlaceholder placeholderWithFrame:avatarView.bounds title:sender.fullName ID:sender.ID];
-        
-        [avatarView setImageWithURL:userImageUrl
-                        placeholder:placeholder
-                            options:SDWebImageHighPriority
-                           progress:nil
-                     completedBlock:nil];
-        avatarView.imageViewType = QMImageViewTypeCircle;
+//        NSURL *userImageUrl = [NSURL URLWithString:sender.avatarUrl];
+//        UIImage *placeholder = [QMPlaceholder placeholderWithFrame:avatarView.bounds title:sender.fullName ID:sender.ID];
+//        UIImage *placeholder = [UIImage imageNamed:@"in.png"];
+//        [avatarView setImageWithURL:nil
+//                        placeholder:placeholder
+//                            options:SDWebImageHighPriority
+//                           progress:nil
+//                     completedBlock:nil];
+//        avatarView.imageViewType = QMImageViewTypeCircle;
         
     }
 

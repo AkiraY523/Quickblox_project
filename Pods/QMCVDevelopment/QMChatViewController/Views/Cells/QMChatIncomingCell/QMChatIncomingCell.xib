@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,10 +15,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0n-sL-BzS" userLabel="Avatar Container">
-                        <rect key="frame" x="0.0" y="30" width="44" height="45"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="75"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-KZ-jCD" userLabel="Avatar Image View" customClass="QMImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="75"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -30,18 +30,24 @@
                             <constraint firstItem="L8j-KZ-jCD" firstAttribute="leading" secondItem="W0n-sL-BzS" secondAttribute="leading" id="xOm-NI-68l"/>
                             <constraint firstAttribute="width" constant="44" id="zVA-fi-2bt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="k76-lq-EWW"/>
+                                <exclude reference="zVA-fi-2bt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lux-vg-6Z5" userLabel="ContainerView" customClass="QMChatContainerView">
-                        <rect key="frame" x="46" y="0.0" width="163" height="75"/>
+                        <rect key="frame" x="8" y="0.0" width="163" height="75"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-gJ-Bzq" userLabel="Message Container">
                                 <rect key="frame" x="11" y="3" width="149" height="71"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVl-fR-cgk" customClass="TTTAttributedLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="149" height="21"/>
-                                        <color key="backgroundColor" red="0.5758987968" green="0.63260070530000001" blue="0.69994870580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:44" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-fQ-dGT" customClass="TTTAttributedLabel">
+                                        <rect key="frame" x="0.0" y="50" width="149" height="21"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" identifier="incCellTopLabelHeight" id="xq4-Ck-zDx"/>
+                                            <constraint firstAttribute="height" constant="21" identifier="incCellBottomLabelHeight" id="cbV-gS-CjC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,11 +60,11 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:44" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-fQ-dGT" customClass="TTTAttributedLabel">
-                                        <rect key="frame" x="0.0" y="50" width="149" height="21"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVl-fR-cgk" customClass="TTTAttributedLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="21"/>
+                                        <color key="backgroundColor" red="0.5758987968" green="0.63260070530000001" blue="0.69994870580000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" identifier="incCellBottomLabelHeight" id="cbV-gS-CjC"/>
+                                            <constraint firstAttribute="height" constant="21" identifier="incCellTopLabelHeight" id="xq4-Ck-zDx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,12 +116,20 @@
             </view>
             <constraints>
                 <constraint firstItem="lux-vg-6Z5" firstAttribute="top" secondItem="C3M-tc-m20" secondAttribute="top" identifier="incCellContainerTopToCellTop" id="2aL-wM-yzn"/>
+                <constraint firstAttribute="trailing" secondItem="lux-vg-6Z5" secondAttribute="trailing" constant="10" id="56B-S4-bAV"/>
                 <constraint firstItem="W0n-sL-BzS" firstAttribute="leading" secondItem="C3M-tc-m20" secondAttribute="leading" id="Cgk-xL-zfE"/>
                 <constraint firstItem="W0n-sL-BzS" firstAttribute="bottom" secondItem="lux-vg-6Z5" secondAttribute="bottom" identifier="incCellAvaContainerBottomToContainerBottom" id="Hq1-4R-ZL2"/>
-                <constraint firstItem="lux-vg-6Z5" firstAttribute="leading" secondItem="W0n-sL-BzS" secondAttribute="trailing" priority="750" constant="2" id="NeG-V3-bBd"/>
+                <constraint firstItem="W0n-sL-BzS" firstAttribute="height" secondItem="8ct-WW-zaC" secondAttribute="height" id="ks5-bI-ySs"/>
                 <constraint firstAttribute="bottom" secondItem="lux-vg-6Z5" secondAttribute="bottom" identifier="incCellBottomToContainerBottom" id="m5g-Xl-Xx2"/>
+                <constraint firstItem="lux-vg-6Z5" firstAttribute="leading" secondItem="C3M-tc-m20" secondAttribute="leading" constant="10" id="n5W-vp-AZr"/>
+                <constraint firstItem="W0n-sL-BzS" firstAttribute="height" secondItem="C3M-tc-m20" secondAttribute="height" id="qNm-ic-0hb"/>
             </constraints>
             <size key="customSize" width="252" height="75"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ks5-bI-ySs"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="avatarContainerViewHeightConstraint" destination="k76-lq-EWW" id="KiD-XX-AP2"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="zVA-fi-2bt" id="wkW-g4-JZT"/>
@@ -135,7 +149,7 @@
                 <outlet property="topLabelHeightConstraint" destination="xq4-Ck-zDx" id="Hy1-bl-2Bk"/>
                 <outlet property="topLabelTextViewVerticalSpaceConstraint" destination="L8d-f5-ErX" id="Smd-FT-wZB"/>
             </connections>
-            <point key="canvasLocation" x="78" y="87.5"/>
+            <point key="canvasLocation" x="108" y="87.5"/>
         </collectionViewCell>
     </objects>
 </document>
