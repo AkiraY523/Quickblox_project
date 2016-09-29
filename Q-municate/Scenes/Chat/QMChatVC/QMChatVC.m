@@ -651,7 +651,7 @@ NYTPhotosViewControllerDelegate
 - (NSAttributedString *)bottomLabelAttributedStringForItem:(QBChatMessage *)messageItem {
     
     UIColor *textColor = messageItem.senderID == self.senderID ? QMChatOutgoingBottomLabelColor() : QMChatIncomingBottomLabelColor();
-    UIFont *font = [UIFont systemFontOfSize:12.0f];
+    UIFont *font = [UIFont systemFontOfSize:20.0f];
     NSDictionary *attributes = @{ NSForegroundColorAttributeName:textColor, NSFontAttributeName:font};
     
     NSString* text = messageItem.dateSent ? [QMDateUtils formatDateForTimeRange:messageItem.dateSent] : @"";
@@ -760,9 +760,11 @@ NYTPhotosViewControllerDelegate
 - (QMChatCellLayoutModel)collectionView:(QMChatCollectionView *)collectionView layoutModelAtIndexPath:(NSIndexPath *)indexPath {
     QMChatCellLayoutModel layoutModel = [super collectionView:collectionView layoutModelAtIndexPath:indexPath];
     
-    layoutModel.topLabelHeight = 0.0f;
+    layoutModel.topLabelHeight = 10.0f;
     layoutModel.maxWidthMarginSpace = 20.0f;
     layoutModel.spaceBetweenTextViewAndBottomLabel = 5.0f;
+ 
+    
     
     QBChatMessage *item = [self.chatSectionManager messageForIndexPath:indexPath];
     Class class = [self viewClassForItem:item];
