@@ -10,11 +10,53 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494630792.640725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-refreshMessages"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1038"
             endingLineNumber = "1038"
+            landmarkName = "-sendIsTypingStatus"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494630792.640725"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
+            landmarkName = "-refreshMessages"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "996"
+            endingLineNumber = "996"
             landmarkName = "-sendIsTypingStatus"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +68,18 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "993"
+            endingLineNumber = "993"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1035"
             endingLineNumber = "1035"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkName = "-sendIsTypingStatus"
             landmarkType = "5">
             <Locations>
@@ -90,6 +139,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1296"
+            endingLineNumber = "1296"
+            landmarkName = "-chatAttachmentService:didChangeLoadingProgress:forChatAttachment:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1236"
+            endingLineNumber = "1236"
+            landmarkName = "-chatService:didAddChatDialogsToMemoryStorage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494905205.496952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "818"
+            endingLineNumber = "818"
+            landmarkName = "-collectionView:configureCell:forIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1252"
+            endingLineNumber = "1252"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -143,6 +247,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1294"
             endingLineNumber = "1294"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkName = "-chatService:didUpdateMessage:forDialogID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,6 +259,14 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494915369.76309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1240"
+            endingLineNumber = "1240"
+            landmarkName = "-chatService:didReceiveNotificationMessage:createDialog:"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -384,6 +497,7 @@
             startingLineNumber = "756"
             endingLineNumber = "756"
             landmarkName = "-collectionView:layout:minimumLineSpacingForSectionAtIndex:"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -394,11 +508,67 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494712905.740004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494712906.330548"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494712907.017888"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+            timestampString = "494905205.496952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "819"
+            endingLineNumber = "819"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "862"
             endingLineNumber = "862"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkName = "-collectionView:configureCell:forIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,11 +580,19 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494905205.496952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "820"
+            endingLineNumber = "820"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "863"
             endingLineNumber = "863"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkName = "-collectionView:configureCell:forIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,11 +604,19 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494905205.496952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "821"
+            endingLineNumber = "821"
+=======
             timestampString = "495859196.576912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "864"
             endingLineNumber = "864"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkName = "-collectionView:configureCell:forIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,12 +628,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494716596.297703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "579"
+            endingLineNumber = "579"
+            landmarkName = "-attributedStringForItem:"
+=======
             timestampString = "495686809.739262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "631"
             endingLineNumber = "631"
             landmarkName = "-topLabelAttributedStringForItem:"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -458,12 +653,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494716597.044455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "580"
+            endingLineNumber = "580"
+            landmarkName = "-attributedStringForItem:"
+=======
             timestampString = "495686810.770011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "632"
             endingLineNumber = "632"
             landmarkName = "-topLabelAttributedStringForItem:"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -474,6 +678,14 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494716597.607063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "581"
+            endingLineNumber = "581"
+            landmarkName = "-attributedStringForItem:"
+=======
             timestampString = "495686812.196172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -528,6 +740,7 @@
             startingLineNumber = "636"
             endingLineNumber = "636"
             landmarkName = "-topLabelAttributedStringForItem:"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -538,12 +751,21 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Q-municate/Scenes/Chat/QMChatVC/QMChatVC.m"
+<<<<<<< HEAD
+            timestampString = "494716598.135647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
+            landmarkName = "-attributedStringForItem:"
+=======
             timestampString = "495686820.128428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "637"
             endingLineNumber = "637"
             landmarkName = "-topLabelAttributedStringForItem:"
+>>>>>>> 037bb6a79480b2cc0a9078947bd9b1e9accfc55f
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
